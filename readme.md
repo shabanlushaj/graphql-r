@@ -1,8 +1,9 @@
-# REST API  
+# GRAPHQL SERVER WITH APOLLO
 
 ## Scripts  
 
 Install dependencies :
+
 `npm i`
 
 To start the express server :
@@ -15,6 +16,29 @@ Build for production :
 
 &nbsp;
 
-## GET & POST request with curl
+## Using GraphQL schema with Playground
 
-```$ curl -X POST http://localhost:9000/delete-listing -H 'Content-Type:application/json' -d '{"id":"001"}'```
+Follow link :
+
+<http://localhost:9000/api>
+
+Query listings:
+
+```query{
+  listings{
+    id
+    title
+    price
+  }
+}
+```
+
+Mutation:
+
+```mutation{
+  deleteListing(id: "001"){
+    id 
+    title
+  }
+}
+```
